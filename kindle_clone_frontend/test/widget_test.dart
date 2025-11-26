@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kindle_clone_frontend/main.dart';
+import 'package:kindle_clone_frontend/app.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Bottom navigation renders and switches tabs', (WidgetTester tester) async {
+    await tester.pumpWidget(const MaterialApp(home: KindleApp()));
 
-    expect(find.text('kindle_clone_frontend App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-  });
+    // Expect Library screen title initially
+    expect(find.text('Library'), findsOneWidget);
 
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    // Tap Settings tab
+    await tester.tap(find.byIcon(Icons.settings_outlined));
+    await tester.pumpAndSettle();
 
-    expect(find.text('kindle_clone_frontend'), findsOneWidget);
+    expect(find.text('Settings'), findsOneWidget);
   });
 }
