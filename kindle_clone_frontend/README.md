@@ -1,16 +1,25 @@
 # kindle_clone_frontend
 
-A new Flutter project.
+Minimal Flutter app scaffold to ensure successful build/run.
 
-## Getting Started
+## Project status
+This container includes a valid Flutter project structure with a minimal entry point at:
+- lib/main.dart
 
-This project is a starting point for a Flutter application.
+## Run locally
+1) Ensure Flutter is installed and a device/emulator is available.
+2) From this directory:
+   - flutter pub get
+   - flutter run
 
-A few resources to get you started if this is your first Flutter project:
+To run tests:
+- flutter test
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Notes
+- The app uses a simple MaterialApp and a bottom navigation scaffold (Library / Downloads / Settings) to validate rendering.
+- Assets directory exists for future use (assets/). The pubspec.yaml already includes assets and .env mapping.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+If you encounter dependency resolution issues, try:
+- flutter clean
+- flutter pub get
+
